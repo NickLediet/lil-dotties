@@ -1,7 +1,7 @@
 #!/usr/env/bin sh
 
 
-function get-git-creds {
+function prompt-git-creds {
 	read -p "What is your git email?   " GIT_EMAIL
 	read -p "What is your fullname for git?   " GIT_NAME
 

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 REPO_PATH="${HOME}/.lil-dotties"
+SCRIPTS_PATH="${HOME}/.lil-scripts"
+
+# Bring in lib code
+source "${SCRIPTS_PATH}/prompt-git-creds.sh"
 
 function yesno_exit() {
   while true
@@ -27,8 +31,14 @@ function yesno_exit() {
 function config {
    git --git-dir="${REPO_PATH}" --work-tree=$HOME $@
 }
-config status
-echo 'Worked'
+
+
+function _install {
+	config status
+	echo 'Worked'
+	get-git-creds
+}
+_install
 
 # Todo:
 # - [ ] Prove install script works (First GREEN)
