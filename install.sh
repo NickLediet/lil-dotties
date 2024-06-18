@@ -16,7 +16,8 @@ function config {
 }
 
 function clone-bare-repo {
-	git clone --bare git@github.com:NickLediet/lil-dotties.git "${REPO_PATH}"
+	git clone --bare https://github.com/NickLediet/lil-dotties.git "${REPO_PATH}"
+	#git clone --bare git@github.com:NickLediet/lil-dotties.git "${REPO_PATH}"
 }
 
 function create-backup {
