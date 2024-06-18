@@ -19,7 +19,8 @@ FROM ubuntu:latest as base
 RUN apt-get update -y && apt-get install -y \
 	git \
 	curl \
-	coreutils
+	coreutils \
+	tree
 
 ################################################################################
 # Create a final stage for running your application.
