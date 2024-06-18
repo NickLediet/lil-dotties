@@ -1,5 +1,5 @@
 # root config alias frorm globally using repository
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.lil-dotties/ --work-tree=$HOME'
 
 # git aliases
 alias gst="git status"
