@@ -36,7 +36,7 @@ function config {
 function _install {
 	config status
 	echo 'Worked'
-	get-git-creds
+	prompt-git-creds
 }
 _install
 
