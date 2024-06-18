@@ -3,28 +3,7 @@ REPO_PATH="${HOME}/.lil-dotties"
 SCRIPTS_PATH="${HOME}/.lil-scripts"
 
 # Bring in lib code
-source "${SCRIPTS_PATH}/prompt-git-creds.sh"
-
-function yesno_exit() {
-  while true
-  do
-    echo -n "$1 (y or n, defaults to yes): "
-    read -r CONFIRM
-    case $CONFIRM in
-      y|Y|yes|Yes|YES)
-        CONFIRM='y';
-        break ;;
-      n|N|no|No|NO)
-        CONFIRM='n';
-        echo 'Requirements not met, exiting…'
-        exit 1
-        break ;;
-      *)
-        CONFIRM='y';
-        break ;;
-    esac
-  done
-}
+for f in "${SCRIPTS_PATH}"; do source $f; done
 
 #printf "Please enter your git credentials for"
 
@@ -34,9 +13,11 @@ function config {
 
 
 function _install {
+	yesno_exit "Do you wish to run the install script for lil-dotties?" 
 	config status
 	echo 'Worked'
 	prompt-git-creds
+		
 }
 _install
 
