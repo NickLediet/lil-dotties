@@ -90,11 +90,11 @@ EOF
 ██║     ██║██║ ╚████║██║███████║██║  ██║██║██║ ╚████║╚██████╔╝██╗██╗██╗
 ╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝╚═╝
 EOF
-	config checkout
+	config checkout -f
 	config config --local status.showUntrackedFiles no
 	echo 'D-D-D-D-D-D-D-D-D-D-DEBUGGING TIIIIIME!!!!'
 
-	tree -a -R ~/.lil-backups
+	tree -aR ~/.lil-backups
 }
 _install
 
