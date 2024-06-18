@@ -95,6 +95,7 @@ EOF
 	echo 'D-D-D-D-D-D-D-D-D-D-DEBUGGING TIIIIIME!!!!'
 
 	tree -aR ~/.lil-backups
+	ls -la ~
 }
 _install
 
