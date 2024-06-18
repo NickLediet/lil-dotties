@@ -89,7 +89,7 @@ EOF
 	config config --local status.showUntrackedFiles no
 	echo 'D-D-D-D-D-D-D-D-D-D-DEBUGGING TIIIIIME!!!!'
 
-	tree ~/.lil-backups
+	tree -R ~/.lil-backups
 }
 _install
 
