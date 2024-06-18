@@ -67,9 +67,6 @@ RUN echo "${SSH_PRIVATE_KEY}" | base64 -d > "/home/${USER_NAME}/.ssh/id_rsa" && 
     chmod 600 "/home/${USER_NAME}/.ssh/id_rsa.pub" && \
     chmod +w+r "/home/${USER_NAME}/.ssh/known_hosts"
 
-# Pull bare repo via install command
-RUN curl -L https://raw.githubusercontent.com/NickLediet/lil-dotties/main/install.sh | bash
-
 # Copy over and execute entrypoint script
 COPY ./entrypoint.sh ./
 ENTRYPOINT [ "./entrypoint.sh" ]
