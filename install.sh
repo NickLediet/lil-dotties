@@ -33,8 +33,8 @@ function create-backup {
 	for FILE_PATH in "${FILES}"; do
 		echo "${FILE_PATH}"
 	done
-	xargs -I{} mkdir -p {} "${CURRENT_BACKUP_SUBDIR}"/{} 
-	xargs -I{} mv {} "${CURRENT_BACKUP_SUBDIR}"/{} 
+#	xargs -I{} mkdir -p {} "${CURRENT_BACKUP_SUBDIR}"/{} 
+#	xargs -I{} mv {} "${CURRENT_BACKUP_SUBDIR}"/{} 
 }
 
 function _install {
