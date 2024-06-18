@@ -42,7 +42,7 @@ function create-backup {
 
 		# Back em up!
 		echo "Backing up ${FILE_PATH} to it's new home @ ${CURRENT_BACKUP_SUBDIR}/${FILE_NAME}..."
-		cp "${FILE_PATH}" "${CURRENT_BACKUP_SUBDIR}/${FILE_NAME}"
+		mv "${FILE_PATH}" "${CURRENT_BACKUP_SUBDIR}/${FILE_NAME}"
 	done
 }
 
