@@ -1,6 +1,15 @@
 # root config alias frorm globally using repository
 alias config='/usr/bin/git --git-dir=$HOME/.lil-dotties/ --work-tree=$HOME'
 
+# lil-dotties aliases
+function lil {
+	$(cd ~/.lil-src && make $1)
+}
+
+
+# Docker aliases
+alias dnuke="docker rm $(docker ps -aq)"
+
 # git aliases
 alias gst="git status"
 alias gadd="git add"

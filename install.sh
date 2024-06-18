@@ -36,6 +36,7 @@ function create-backup {
 	# Get any unchecked files for backing up (This only checks files that conflict with lil-dotties)
 	FILES=$(config checkout 2>&1 | egrep "\s+\." | awk {'print $1'})
 	for FILE_PATH in "${FILES}"; do
+		echo "THE FILE PATH IS ${FILE_PATH}"
 		# Back em up!
 		mv "${FILE_PATH}" "${CURRENT_BACKUP_SUBDIR}"
 	done
