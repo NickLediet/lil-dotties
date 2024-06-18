@@ -3,7 +3,7 @@ REPO_PATH="${HOME}/.lil-dotties"
 SCRIPTS_PATH="${HOME}/.lil-scripts"
 
 # Bring in lib code
-for f in "${SCRIPTS_PATH}"; do source $f; done
+for f in "${SCRIPTS_PATH}/*"; do source $f; done
 
 #printf "Please enter your git credentials for"
 
