@@ -8,7 +8,9 @@ function lil {
 
 
 # Docker aliases
-alias dnuke="docker rm $(docker ps -aq)"
+function dnuke {
+	docker rm $(docker ps -aq)
+}
 
 # git aliases
 alias gst="git status"
