@@ -2,14 +2,13 @@
 REPO_PATH="${HOME}/.lil-dotties"
 SCRIPTS_PATH="${HOME}/.lil-scripts"
 
-# Bring in lib codea
-ls -la "${SCRIPTS_PATH}"
-
-for f in "${SCRIPTS_PATH}"/*; do
-	echo "Sourcing ${f}..."
-	[ -e "$f" ] || continue
-	source $f
-done
+# Bring in lib code
+function load-lib-code {
+	for f in "${SCRIPTS_PATH}"/*; do
+		[ -e "$f" ] || continue
+		source $f
+	done
+}
 
 #printf "Please enter your git credentials for"
 
@@ -25,6 +24,7 @@ function _install {
 	prompt-git-creds
 		
 }
+load-lib-code
 _install
 
 # Todo:
