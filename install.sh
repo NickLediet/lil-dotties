@@ -38,7 +38,7 @@ function create-backup {
 	FILES=$(config checkout 2>&1 | egrep "\s+\." | awk {'print $1'})
 	for FILE_PATH in "${FILES}"; do
 		echo "THE FILE PATH IS ${FILE_PATH}"
-		FILE_NAME=$(basename "${FILE_PATH}"
+		FILE_NAME=$(basename "${FILE_PATH}")
 
 		# Back em up!
 		echo "Backing up ${FILE_PATH} to it's new home @ ${CURRENT_BACKUP_SUBDIR}/${FILE_NAME}..."
