@@ -18,23 +18,8 @@ FROM ubuntu:latest as base
 
 RUN apt-get update -y && apt-get install -y \
 	git \
-	curl
-
-################################################################################
-# Create a stage for building/compiling the application.
-#
-# The following commands will leverage the "base" stage above to generate
-# a "hello world" script and make it executable, but for a real application, you
-# would issue a RUN command for your application's build process to generate the
-# executable. For language-specific examples, take a look at the Dockerfiles in
-# the Awesome Compose repository: https://github.com/docker/awesome-compose
-FROM base as build
-COPY <<EOF /bin/hello.sh
-#!/usr/bin/env bash
-i=0
-while true; do (($i++)); echo "${i}" &> /dev/null ; done
-EOF
-RUN chmod +x /bin/hello.sh
+	curl \
+	coreutils
 
 ################################################################################
 # Create a final stage for running your application.
@@ -82,12 +67,7 @@ RUN echo "${SSH_PRIVATE_KEY}" | base64 -d > "/home/${USER_NAME}/.ssh/id_rsa" && 
     chmod 600 "/home/${USER_NAME}/.ssh/id_rsa.pub" && \
     chmod +w+r "/home/${USER_NAME}/.ssh/known_hosts"
 
-
-# Copy the executable from the "build" stage.
-COPY --from=build /bin/hello.sh /home/$USER_NAME
-
 # Pull bare repo via install command
 RUN curl -L https://raw.githubusercontent.com/NickLediet/lil-dotties/main/install.sh | bash
 
-# What the container should run when it is started.
-ENTRYPOINT [ "./hello.sh" ]
+ENTRYPOINT [ "sleep", "infinity" ]

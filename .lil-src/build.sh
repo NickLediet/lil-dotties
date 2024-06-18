@@ -5,7 +5,7 @@ set +o allexport
 
 # Build the container with dynamic args for ssh keys
 docker build \
-	--no-cache \
+	--no-cache-filter final \
 	--build-arg KNOWN_HOSTS="${KNOWN_HOSTS}" \
 	--build-arg SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
        	--build-arg SSH_PUBLIC_KEY="${SSH_PUBLIC_KEY}" \

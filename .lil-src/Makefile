@@ -4,8 +4,11 @@ remove:
 build:
 	./build.sh
 
-run: 
+run: build
 	./run.sh
 
-run-fresh: remove build run
+run-fresh: remove run
+
+shell:
+	./shell.sh
 
