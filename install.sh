@@ -41,7 +41,7 @@ function _install {
 	clone-bare-repo
 	config config --unset status.showUntrackedFiles
 	load-lib-code
-	yesno_exit "Do you wish to run the install script for lil-dotties?"
+#	yesno_exit "Do you wish to run the install script for lil-dotties?"
 	# Verify if changes have been made and create backups if required
 	config checkout 
 	if [ $? = 0 ]; then

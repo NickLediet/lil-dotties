@@ -70,4 +70,6 @@ RUN echo "${SSH_PRIVATE_KEY}" | base64 -d > "/home/${USER_NAME}/.ssh/id_rsa" && 
 # Pull bare repo via install command
 RUN curl -L https://raw.githubusercontent.com/NickLediet/lil-dotties/main/install.sh | bash
 
-ENTRYPOINT [ "sleep", "infinity" ]
+# Copy over and execute entrypoint script
+COPY ./entrypoint.sh ./
+ENTRYPOINT [ "./entrypoint.sh" ]
