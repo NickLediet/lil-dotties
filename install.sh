@@ -49,8 +49,8 @@ function _install {
 		echo "Backing up existing dotfiles"
 		create-backup
 	fi
-	#config checkout
-	#config config status.showUntrackedFiles no
+	config checkout
+	config config --local status.showUntrackedFiles no
 		
 }
 _install
