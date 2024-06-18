@@ -31,14 +31,17 @@ function create-backup {
 	CURRENT_BACKUP_SUBDIR="${BACKUP_PATH}/${FILE_HASH}-$(whoami)-backup"
 
 	# Create the directory for this backup
+	echo "Creating backup dir at ${CURRENT_BACKUP_SUBDIR}"
 	mkdir "${CURRENT_BACKUP_SUBDIR}"
 
 	# Get any unchecked files for backing up (This only checks files that conflict with lil-dotties)
 	FILES=$(config checkout 2>&1 | egrep "\s+\." | awk {'print $1'})
 	for FILE_PATH in "${FILES}"; do
 		echo "THE FILE PATH IS ${FILE_PATH}"
+		FILE_NAME=$(basename "${FILE_PATH}"
 		# Back em up!
-		mv "${FILE_PATH}" "${CURRENT_BACKUP_SUBDIR}"
+		echo "Backing up ${FILE_PATH} to it's new home @ ${CURRENT_BACKUP_SUBDIR}/${FILE_NAME}..."
+		cp "${FILE_PATH}" "${CURRENT_BACKUP_SUBDIR}/${FILE_NAME}"
 	done
 }
 
