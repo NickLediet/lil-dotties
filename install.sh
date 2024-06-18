@@ -39,6 +39,7 @@ function create-backup {
 	for FILE_PATH in "${FILES}"; do
 		echo "THE FILE PATH IS ${FILE_PATH}"
 		FILE_NAME=$(basename "${FILE_PATH}"
+
 		# Back em up!
 		echo "Backing up ${FILE_PATH} to it's new home @ ${CURRENT_BACKUP_SUBDIR}/${FILE_NAME}..."
 		cp "${FILE_PATH}" "${CURRENT_BACKUP_SUBDIR}/${FILE_NAME}"
