@@ -90,7 +90,7 @@ EOF
 ██║     ██║██║ ╚████║██║███████║██║  ██║██║██║ ╚████║╚██████╔╝██╗██╗██╗
 ╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝╚═╝
 EOF
-	config checkout -f
+	config checkout --force
 	config config --local status.showUntrackedFiles no
 	echo 'D-D-D-D-D-D-D-D-D-D-DEBUGGING TIIIIIME!!!!'
 
