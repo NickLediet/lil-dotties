@@ -5,12 +5,13 @@ BACKUP_PATH="${HOME}/.lil-backups"
 
 # Bring in lib code
 function load-lib-code {
-	set -o allexport
+	set -a
 	for f in "${SCRIPTS_PATH}"/*; do
 		[ -e "$f" ] || continue
+		echo "$f is being loaded..."
 		source $f
 	done
-	set +o allexport
+	set +a
 }
 
 function config {
