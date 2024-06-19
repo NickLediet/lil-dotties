@@ -10,8 +10,9 @@ function load-lib-code {
 	set -a
 	for f in $FILES; do
 		file_path="${SCRIPTS_PATH}/${f}"
+		cat $file_path
 		echo "$file_path is being loaded..."
-		source "${filepath}"
+		source "${file_path}"
 	done
 	set +a
 }
