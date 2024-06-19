@@ -64,10 +64,6 @@ EOF
 	echo "Cloning repository..."
 	clone-bare-repo
 	config config --unset status.showUntrackedFiles
-
-	echo "Loading libraries..."
-	load-lib-code
-
 #	yesno_exit "Do you wish to run the install script for lil-dotties?"
 
 	# Verify if changes have been made and create backups if required
@@ -111,6 +107,9 @@ EOF
 ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝╚═╝
                                                                                      
 EOF
+	echo "Loading libraries..."
+	load-lib-code
+
 	OS=$(get-operating-system)
 	case "$OS" in
 		Mac)
