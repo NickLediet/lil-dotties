@@ -5,10 +5,12 @@ BACKUP_PATH="${HOME}/.lil-backups"
 
 # Bring in lib code
 function load-lib-code {
+	set -o allexport
 	for f in "${SCRIPTS_PATH}"/*; do
 		[ -e "$f" ] || continue
 		source $f
 	done
+	set +0 allexport
 }
 
 function config {
@@ -107,7 +109,6 @@ EOF
 ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝╚═╝
                                                                                      
 EOF
-	source ~/.lil-scripts/get-operating-system
 	OS=$(get-operating-system)
 	case "$OS" in
 		Mac)
