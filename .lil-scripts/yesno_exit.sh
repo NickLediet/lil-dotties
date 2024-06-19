@@ -20,3 +20,5 @@ function yesno_exit() {
     esac
   done
 }
+
+export -f yesno_exit

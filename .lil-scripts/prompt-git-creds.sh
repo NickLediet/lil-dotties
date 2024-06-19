@@ -15,4 +15,5 @@ git config --global user.name "${GIT_NAME}"
 EOF
 }
 
+export -f prompt-git-creds
 

@@ -13,3 +13,5 @@ function get-operating-system {
 	esac
 	echo ${machine}
 }
+
+export -f get-operating-system
