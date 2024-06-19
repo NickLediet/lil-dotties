@@ -8,8 +8,9 @@ function load-lib-code {
 	set -a
 	ls -la "${SCRIPTS_PATH}"
 	for f in $(ls "${SCRIPTS_PATH}/*"); do
-		echo "$f is being loaded..."
-		source $f
+		file_path="${SCRIPTS_PATH}/${f}"
+		echo "$file_path is being loaded..."
+		source "${filepath}"
 	done
 	set +a
 }
