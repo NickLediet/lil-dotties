@@ -107,6 +107,7 @@ EOF
 ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝╚═╝╚═╝
                                                                                      
 EOF
+	source ~/.lil-scripts/get-operating-system
 	OS=$(get-operating-system)
 	case "$OS" in
 		Mac)
