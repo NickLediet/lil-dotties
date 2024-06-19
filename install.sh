@@ -7,7 +7,7 @@ BACKUP_PATH="${HOME}/.lil-backups"
 function load-lib-code {
 	set -a
 	ls -la "${SCRIPTS_PATH}"
-	for f in "${SCRIPTS_PATH}/*"; do
+	for f in $(ls "${SCRIPTS_PATH}/*"); do
 		echo "$f is being loaded..."
 		source $f
 	done
