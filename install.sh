@@ -10,7 +10,7 @@ function load-lib-code {
 		[ -e "$f" ] || continue
 		source $f
 	done
-	set +0 allexport
+	set +o allexport
 }
 
 function config {
