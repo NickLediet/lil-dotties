@@ -127,6 +127,8 @@ EOF
 			;;
 	esac
 
+	${HOME}/.local/bin/yq --help
+
 }
 _install
 
