@@ -120,6 +120,9 @@ EOF
 		Linux)
 			VERSION='v4.44.2'
 			BINARY='yq_linux_amd64'
+			if [[ ! -z "${HOME}/.local/bin" ]] then
+				mkdir -p "${HOME}/.local/bin"
+			fi
 			wget "https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}" -O "${HOME}/.local/bin/yq" && chmod +x "${HOME}/.local/bin/yq"
 			;;
 	esac
