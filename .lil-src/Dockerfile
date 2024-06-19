@@ -20,7 +20,8 @@ RUN apt-get update -y && apt-get install -y \
 	git \
 	curl \
 	coreutils \
-	tree
+	tree \
+	wget
 
 ################################################################################
 # Create a final stage for running your application.
