@@ -63,8 +63,12 @@ function _install {
 ╚══════╝╚══════╝   ╚═╝      ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝      ╚═════╝ ╚═╝╚═╝╚═╝╚═╝
 
 EOF
-	echo "Cloning repository..."
-	clone-bare-repo
+	if [[ ! -z "${REPO_PATH}"]]; then
+		echo "Cloning repository..."
+		clone-bare-repo
+	else
+		echo "Repo already exists, moving to backups step"
+	fi
 	config config --unset status.showUntrackedFiles
 #	yesno_exit "Do you wish to run the install script for lil-dotties?"
 
