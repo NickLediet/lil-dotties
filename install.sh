@@ -63,7 +63,7 @@ function _install {
 ╚══════╝╚══════╝   ╚═╝      ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝      ╚═════╝ ╚═╝╚═╝╚═╝╚═╝
 
 EOF
-	if [[ ! -z "${REPO_PATH}" ]]; then
+	if [ ! -d "${REPO_PATH}" ]; then
 		echo "Cloning repository..."
 		clone-bare-repo
 	else
