@@ -5,14 +5,10 @@ BACKUP_PATH="${HOME}/.lil-backups"
 
 # Bring in lib code
 function load-lib-code {
-	FILES=$(ls "$SCRIPTS_PATH")
-
 	set -a
-	for f in $FILES; do
-		file_path="${SCRIPTS_PATH}/${f}"
-		cat $file_path
-		echo "$file_path is being loaded..."
-		source "${file_path}"
+	for f in "$SCRIPTS_PATH"/*; do
+		echo "$f is being loaded..."
+		source "$f"
 	done
 	set +a
 }
