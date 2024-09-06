@@ -15,3 +15,5 @@ config -c pull.rebase=true pull
 
 - [Tmux Plugin Manager (TPM)](https://github.com/tmux-plugins/tpm)
 - [Tmux Sensible Plugin](https://github.com/tmux-plugins/tmux-sensible)
+- [Catppuccin Tmux Theme](https://github.com/catppuccin/tmux)
+
