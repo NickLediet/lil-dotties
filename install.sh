@@ -52,6 +52,19 @@ function create-backup {
 	done
 }
 
+
+# Installtion steps for installing tmux plugin manager
+function install_tmp {
+	# Install TPM
+	local tpm_path="${HOME}/.tmux/plugins/tpm"
+	if [ -d "${tpm_path}" ]; then
+		echo "TPM already installed"
+		return
+	fi
+
+	git clone https://github.com/tmux-plugins/tpm "${tpm_path}"
+}
+
 function _install {
 	cat <<EOF
 
@@ -122,6 +135,7 @@ EOF
 			brew install yq
 			brew install jandedobbeleer/oh-my-posh/oh-my-posh
 			brew install tmux
+			install_tmp
 			;;
 		Linux)
 			VERSION='v4.44.2'
@@ -132,6 +146,7 @@ EOF
 			wget "https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}" -O "${HOME}/.local/bin/yq" && chmod +x "${HOME}/.local/bin/yq"
 			curl -s https://ohmyposh.dev/install.sh | bash -s
 			apt install tmux
+			install_tmp
 			;;
 	esac
 }
