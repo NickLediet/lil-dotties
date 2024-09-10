@@ -11,3 +11,9 @@ Sometimes you can be met with errors that git fails to resolve a merge.  I am cu
 config -c pull.rebase=true pull
 ```
 
+## Resources
+
+- [Tmux Plugin Manager (TPM)](https://github.com/tmux-plugins/tpm)
+- [Tmux Sensible Plugin](https://github.com/tmux-plugins/tmux-sensible)
+- [Catppuccin Tmux Theme](https://github.com/catppuccin/tmux)
+

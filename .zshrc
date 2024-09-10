@@ -1,4 +1,8 @@
 
+# Fixes color and theme issues in tmux
+export TERM=screen-256color-bce
+
+
 export PATH="/opt/homebrew/bin:$PATH"
 
 export VOLTA_HOME="$HOME/.volta"
