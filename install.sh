@@ -139,6 +139,7 @@ EOF
 			install_tpm
 			brew install --cask font-ubuntu-mono-nerd-font
 			brew install fzf
+			brew install zoxide
 			;;
 		Linux)
 			VERSION='v4.44.2'
@@ -152,6 +153,7 @@ EOF
 			apt install tmux
 			install_tpm
 			sudo apt install fzf
+			sudo apt install zoxide
 			;;
 	esac
 }

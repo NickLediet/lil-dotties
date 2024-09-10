@@ -23,7 +23,9 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
-zinit light jscutlery/nx-completion
+
+zinit snippet https://github.com/jscutlery/nx-completion/blob/main/nx-completion.plugin.zsh
+#zinit light jscutlery/nx-completion
 
 # Load plugins
 autoload -Uz compinit && compinit
@@ -76,3 +78,4 @@ source ~/.bash_aliases
 
 # Shell integrations
 eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
