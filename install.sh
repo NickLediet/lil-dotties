@@ -132,6 +132,7 @@ EOF
 	OS=$(get-operating-system)
 	case "$OS" in
 		Mac)
+			brew install jq
 			brew install yq
 			brew install jandedobbeleer/oh-my-posh/oh-my-posh
 			brew install tmux
@@ -145,6 +146,7 @@ EOF
 			if [[ ! -z "${HOME}/.local/bin" ]]; then
 				mkdir -p "${HOME}/.local/bin"
 			fi
+			apt install jq
 			wget "https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}" -O "${HOME}/.local/bin/yq" && chmod +x "${HOME}/.local/bin/yq"
 			curl -s https://ohmyposh.dev/install.sh | bash -s
 			apt install tmux
