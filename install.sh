@@ -137,6 +137,7 @@ EOF
 			brew install tmux
 			install_tpm
 			brew install --cask font-ubuntu-mono-nerd-font
+			brew install fzf
 			;;
 		Linux)
 			VERSION='v4.44.2'
@@ -148,6 +149,7 @@ EOF
 			curl -s https://ohmyposh.dev/install.sh | bash -s
 			apt install tmux
 			install_tpm
+			sudo apt install fzf
 			;;
 	esac
 }
