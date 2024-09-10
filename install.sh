@@ -143,6 +143,7 @@ EOF
 			brew install gitleaks
 			brew install wget
 			brew install neovim
+      git clone -b v2.0 https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 			;;
 		Linux)
 			VERSION='v4.44.2'
@@ -158,6 +159,7 @@ EOF
 			sudo apt install fzf
 			sudo apt install zoxide
 			sudo apt install neovim
+      git clone -b v2.0 https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 			;;
 	esac
 }
