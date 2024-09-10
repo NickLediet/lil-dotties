@@ -25,9 +25,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 zinit light jscutlery/nx-completion
 
-# Zinit znippets (Oh-my-zsh plugins)
-zinit snippet 
-
 # Load plugins
 autoload -Uz compinit && compinit
 zinit cdreplay -q
