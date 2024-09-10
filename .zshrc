@@ -73,4 +73,5 @@ alias ls='ls --color'
 alias c='clear'
 source ~/.bash_aliases
 
-
+# Shell integrations
+eval "$(fzf --zsh)"
