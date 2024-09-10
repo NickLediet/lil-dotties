@@ -142,6 +142,7 @@ EOF
 			brew install zoxide
 			brew install gitleaks
 			brew install wget
+			brew install neovim
 			;;
 		Linux)
 			VERSION='v4.44.2'
@@ -156,6 +157,7 @@ EOF
 			install_tpm
 			sudo apt install fzf
 			sudo apt install zoxide
+			sudo apt install neovim
 			;;
 	esac
 }
