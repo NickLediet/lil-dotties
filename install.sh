@@ -140,6 +140,8 @@ EOF
 			brew install --cask font-ubuntu-mono-nerd-font
 			brew install fzf
 			brew install zoxide
+			brew install gitleaks
+			brew install wget
 			;;
 		Linux)
 			VERSION='v4.44.2'

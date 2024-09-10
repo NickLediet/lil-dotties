@@ -25,4 +25,4 @@ config -c pull.rebase=true pull
 - [zsh Completions](https://github.com/zsh-users/zsh-completions)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-
+- [Git Leaks](https://github.com/gitleaks/gitleaks)
