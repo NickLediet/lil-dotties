@@ -26,3 +26,4 @@ config -c pull.rebase=true pull
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [Git Leaks](https://github.com/gitleaks/gitleaks)
+- [NvChad](https://github.com/NvChad/NvChad)
