@@ -27,3 +27,4 @@ config -c pull.rebase=true pull
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [Git Leaks](https://github.com/gitleaks/gitleaks)
 - [NvChad](https://github.com/NvChad/NvChad)
+    - [NvChad (Un)Installation Guide](https://nvchad.com/docs/quickstart/install)
