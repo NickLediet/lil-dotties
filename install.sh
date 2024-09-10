@@ -136,7 +136,7 @@ EOF
 			brew install jandedobbeleer/oh-my-posh/oh-my-posh
 			brew install tmux
 			install_tmp
-			brew install --cask font-ubuntumono-nerd-font
+			brew install --cask font-ubuntu-mono-nerd-font
 			;;
 		Linux)
 			VERSION='v4.44.2'
