@@ -144,6 +144,9 @@ EOF
 			brew install wget
 			brew install neovim
       git clone -b v2.0 https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+
+      # Mac Only packages/apps
+      brew install --cask raycast
 			;;
 		Linux)
 			VERSION='v4.44.2'
