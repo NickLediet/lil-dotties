@@ -142,7 +142,6 @@ EOF
 			brew install gitleaks
 			brew install wget
 			brew install neovim
-      git clone -b v2.0 https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 			;;
 		Linux)
 			VERSION='v4.44.2'
@@ -150,14 +149,13 @@ EOF
 			if [[ ! -z "${HOME}/.local/bin" ]]; then
 				mkdir -p "${HOME}/.local/bin"
 			fi
-			apt install jq
+			sudo apt install jq
 			wget "https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}" -O "${HOME}/.local/bin/yq" && chmod +x "${HOME}/.local/bin/yq"
-			apt install tmux
+			sudo apt install tmux
 			install_tpm
 			sudo apt install fzf
 			sudo apt install zoxide
 			sudo apt install neovim
-      git clone -b v2.0 https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 			;;
 	esac
 }
