@@ -65,6 +65,11 @@ function install_tpm {
 	git clone https://github.com/tmux-plugins/tpm "${tpm_path}"
 }
 
+function install_zsh {
+	sudo apt install zsh
+    chsh -s $(which zsh)
+}
+
 function _install {
 	cat <<EOF
 
@@ -155,7 +160,8 @@ EOF
 			install_tpm
 			sudo apt install fzf
 			sudo apt install zoxide
-			sudo apt install neovim
+			sudo apt install neovim 
+            install_zsh
 			;;
 	esac
 }
