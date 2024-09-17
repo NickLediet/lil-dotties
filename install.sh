@@ -134,7 +134,6 @@ EOF
 		Mac)
 			brew install jq
 			brew install yq
-			brew install jandedobbeleer/oh-my-posh/oh-my-posh
 			brew install tmux
 			install_tpm
 			brew install --cask font-ubuntu-mono-nerd-font
@@ -153,7 +152,6 @@ EOF
 			fi
 			apt install jq
 			wget "https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}" -O "${HOME}/.local/bin/yq" && chmod +x "${HOME}/.local/bin/yq"
-			curl -s https://ohmyposh.dev/install.sh | bash -s
 			apt install tmux
 			install_tpm
 			sudo apt install fzf
