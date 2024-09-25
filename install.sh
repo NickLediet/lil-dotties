@@ -148,9 +148,9 @@ EOF
       # Install Java environment
       brew tap AdoptOpenJDK/AdoptOpenJDK
       brew tap homebrew/cask-versions
-      brew install --cask termurin@11
-      brew install --cask termurin@17
-      brew install --cask termurin@21
+      brew install --cask temurin@11
+      brew install --cask temurin@17
+      brew install --cask temurin@21
 
       brew install jenv
       jenv add /Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home
