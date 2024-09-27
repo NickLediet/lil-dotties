@@ -1,0 +1,3 @@
+[submodule ".lil-submodules/iterm"]
+	path = .lil-submodules/iterm
+	url = https://github.com/catppuccin/iterm
