@@ -1,0 +1,15 @@
+{
+	"mac": {
+		"oh-my-posh": {
+			"brew": {
+				"package-name": "jandedobbeleer/oh-my-posh/oh-my-posh"
+			},
+		}	
+	},
+	"linux": {
+		"oh-my-posh": {
+			"custom":
+		}
+	}
+}
+

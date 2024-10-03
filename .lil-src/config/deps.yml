@@ -1,0 +1,9 @@
+mac:
+	brew:
+		- "jandedobbeleer/oh-my-posh/oh-my-posh"
+linux:
+	custom:
+		oh-my-posh:
+			install: "curl -s https://ohmyposh.dev/install.sh | bash -s"
+			update: "curl -s https://ohmyposh.dev/install.sh | bash -s"
+

@@ -27,8 +27,12 @@ zinit light Aloxaf/fzf-tab
 zinit snippet https://github.com/jscutlery/nx-completion/blob/main/nx-completion.plugin.zsh
 #zinit light jscutlery/nx-completion
 
+FPATH=$(brew --prefix)/share/zsh-completions:~/.lil-src/completions/:$FPATH
 # Load plugins
-autoload -Uz compinit && compinit
+
+autoload -Uz compinit bashcompinit
+compinit
+bashcompinit
 zinit cdreplay -q
 
 
@@ -36,6 +40,7 @@ zinit cdreplay -q
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Keybindings
+bindkey '^L' clear 
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -72,6 +77,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Bring in bash aliases
 # Aliases
 alias ls='ls --color'
+alias ll='ls -la'
 alias vim='nvim'
 alias c='clear'
 source ~/.bash_aliases
