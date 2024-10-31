@@ -162,6 +162,10 @@ EOF
       # To start, run `cassandra -f&` or `brew services start cassandra`
       brew install cassandra
       # END Java env installation 
+      
+
+      # PHP ENV Install
+      /bin/bash -c "$(curl -fsSL https://get.lando.dev/setup-lando.sh)"
 
       # Mac Only packages/apps
       brew install --cask raycast
@@ -182,6 +186,10 @@ EOF
 			sudo apt install zoxide
 			sudo apt install neovim
       git clone -b v2.0 https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+
+      # PHP ENV
+      /bin/bash -c "$(curl -fsSL https://get.lando.dev/setup-lando.sh)"
+      # Window Lando Command: iex (irm 'https://get.lando.dev/setup-lando.ps1' -UseB)
 
       # Todo: Add port of Java installation steps from mac workflow.
       #       Maybe use sdkman: https://sdkman.io/

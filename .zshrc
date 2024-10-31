@@ -27,7 +27,7 @@ zinit light Aloxaf/fzf-tab
 zinit snippet https://github.com/jscutlery/nx-completion/blob/main/nx-completion.plugin.zsh
 #zinit light jscutlery/nx-completion
 
-FPATH=$(brew --prefix)/share/zsh-completions:~/.lil-src/completions/:$FPATH
+FPATH=/opt/homebrew/share/zsh-completions:~/.lil-src/completions/:$FPATH
 # Load plugins
 
 autoload -Uz compinit bashcompinit
@@ -85,3 +85,5 @@ source ~/.bash_aliases
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+eval "$(jenv init -)"
+
