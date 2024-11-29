@@ -1,0 +1,37 @@
+{
+  "name": "manager",
+  "root_path": "~/manager",
+  "cols": 3,
+  "panes": [
+    {
+      "title": "manager:serve:local",
+      "command": "nx run manager:serve:local",
+      "send_command": true
+    },
+    {
+      "title": "graphql-internal:serve",
+      "command": "nx run graphql-internal:serve",
+      "send_command": true
+    },
+    {
+      "title": "run iris app",
+      "command": "nx run $ARGS",
+      "send_command": true
+    },
+    {
+      "title": "graphqlv2-manager",
+      "command": "nx run graphqlv2-manager:serve",
+      "send_command": true
+    },
+    {
+      "title": "command prompt",
+      "command": "",
+      "focus": true
+    },
+    {
+      "title": "htop",
+      "command": "htop",
+      "send_command": true
+    }
+  ] 
+}

@@ -1,0 +1,31 @@
+{
+  "cols": 3,
+  "panes": [
+    {
+      "title": "manager:serve:local",
+      "command": "nx run manager:serve:local"
+    },
+    {
+      "title": "graphql-internal:serve",
+      "command": "nx run graphql-internal:serve"
+    },
+    {
+      "title": "run iris app",
+      "command": "nx run $ARGS"
+    },
+    {
+      "title": "graphqlv2-manager",
+      "command": "nx run graphqlv2-manager:serve"
+    },
+    {
+      "title": "prompt",
+      "command": "",
+      "focus": true,
+      "sendCommand": false
+    },
+    {
+      "title": "htop",
+      "command": "htop"
+    }
+  ] 
+}

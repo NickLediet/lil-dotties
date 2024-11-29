@@ -31,8 +31,8 @@ FPATH=/opt/homebrew/share/zsh-completions:~/.lil-src/completions/:$FPATH
 # Load plugins
 
 autoload -Uz compinit bashcompinit
-compinit
-bashcompinit
+compinit -y
+bashcompinit -y
 zinit cdreplay -q
 
 
@@ -63,6 +63,7 @@ setopt hist_find_no_dups
 # Fixes color and theme issues in tmux
 export TERM=screen-256color-bce
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/.config/.lil-dotties/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="/Users/nle/.lando/bin${PATH+:$PATH}"; #landopath
@@ -76,11 +77,10 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Bring in bash aliases
 # Aliases
-alias ls='ls --color'
-alias ll='ls -la'
-alias vim='nvim'
-alias c='clear'
-source ~/.bash_aliases
+source "$HOME/.config/.lil-dotties/zsh/aliases.zsh"
+
+# GIT Aliases
+git config --global alias.conflicts "diff --name-only --diff-filter=U"
 
 # Shell integrations
 eval "$(fzf --zsh)"
