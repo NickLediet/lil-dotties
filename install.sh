@@ -65,6 +65,11 @@ function install_tpm {
 	git clone https://github.com/tmux-plugins/tpm "${tpm_path}"
 }
 
+function install_zsh {
+	sudo apt install zsh
+    chsh -s $(which zsh)
+}
+
 function _install {
 	cat <<EOF
 
@@ -134,7 +139,6 @@ EOF
 		Mac)
 			brew install jq
 			brew install yq
-			brew install jandedobbeleer/oh-my-posh/oh-my-posh
 			brew install tmux
 			install_tpm
 			brew install --cask font-ubuntu-mono-nerd-font
@@ -143,7 +147,6 @@ EOF
 			brew install gitleaks
 			brew install wget
 			brew install neovim
-      git clone -b v2.0 https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 			;;
 		Linux)
 			VERSION='v4.44.2'
@@ -151,15 +154,14 @@ EOF
 			if [[ ! -z "${HOME}/.local/bin" ]]; then
 				mkdir -p "${HOME}/.local/bin"
 			fi
-			apt install jq
+			sudo apt install jq
 			wget "https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}" -O "${HOME}/.local/bin/yq" && chmod +x "${HOME}/.local/bin/yq"
-			curl -s https://ohmyposh.dev/install.sh | bash -s
-			apt install tmux
+			sudo apt install tmux
 			install_tpm
 			sudo apt install fzf
 			sudo apt install zoxide
-			sudo apt install neovim
-      git clone -b v2.0 https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+			sudo apt install neovim 
+            install_zsh
 			;;
 	esac
 }
