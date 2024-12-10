@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+session_name="$1"
+shift 1;
+args="$@"
+
+source "$HOME/.config/.lil-dotties/src/tmux-workspaces/create_workspace_session.sh"
+source "$HOME/.config/.lil-dotties/src/concent.sh"
+session_name="manager"
+config_file="$HOME/.config/.lil-dotties/tmux/workspaces/${session_name}.json"
+
+function config_query {
+  query=$1
+  jq -r "$query" "$config_file"
+}
+
+# Todo, explore using these more as layouts that get bootstrapped into a single resumable session maybe, 
+# or the ability to choose to attach as a layout of a session
+# TODO: Build a json/yaml schema for validating a workspace before running it
+# function create_session {
+#   echo "Creating a fresh instance of the '$session_name' session..."
+#   # Context Directory
+#   root_path=$(config_query '.root_path')
+#   # Setup window name vars
+#   main_window_name="main"
+
+#   # Create the named session
+#   tmux new-session -d -s "$session_name" -n "$main_window_name" -c "$root_path"
+
+#   # Setup rows
+#   tmux split-window -v -t "$session_name" -b -l 66%
+#   tmux split-window -v -t "$session_name"
+
+#   # Setup cols
+#   number_of_cols=$(config_query '.cols')
+#   for i in $(seq 0 $(($number_of_cols - 1))); 
+#   do
+#     tmux select-pane -t $(($i * 2))
+#     tmux split-window -h -t "$session_name"
+#   done
+
+#   # Build panes based off their .json config
+#   number_of_panes=$(config_query '.panes|length')
+#   pane_to_focus=""
+#   for i in $(seq 0 $(($number_of_panes - 1)));
+#   do
+#     pane_key=".panes[$i]"
+#     pane_title=$(config_query $pane_key".title")
+#     pane_command=$(config_query $pane_key".command" | sed "s/\$ARGS/$args/")
+#     send_command=$(config_query $pane_key".sendCommand")
+
+#     should_focus=$(config_query $pane_key".focus")
+#     if [ "$should_focus" = "true" ]; then
+#       pane_to_focus=$i
+#     fi
+
+#     tmux select-pane -t $i
+#     tmux send-keys "cd $root_path && clear" C-m
+#     tmux send-keys "$pane_command"
+
+#     if [ "$send_command" != "false" ]; then
+#       tmux send-keys C-m
+#     fi
+#   done
+
+#   if [ ! $pane_to_focus = "" ]; then
+#     tmux select-pane -t $pane_to_focus
+#   fi
+# }
+
+session_exists=$(tmux list-sessions | grep "$session_name")
+
+if [ ! "$session_exists" = "" ]; then
+  if concent "A session with the name \"${session_name}\" already exists.  Would you like to delete it?"; then 
+    echo "Deleting the session..."
+    tmux kill-session -t "$session_name"
+    create_workspace_session "$HOME/.config/.lil-dotties/tmux/workspaces/manager.json" $args
+  fi
+else
+  create_workspace_session "$HOME/.config/.lil-dotties/tmux/workspaces/manager.json" $args
+fi  
+
+# attach session to the main window
+tmux attach-session -t "$session_name"

@@ -27,8 +27,12 @@ zinit light Aloxaf/fzf-tab
 zinit snippet https://github.com/jscutlery/nx-completion/blob/main/nx-completion.plugin.zsh
 #zinit light jscutlery/nx-completion
 
+FPATH=/opt/homebrew/share/zsh-completions:~/.lil-src/completions/:$FPATH
 # Load plugins
-autoload -Uz compinit && compinit
+
+autoload -Uz compinit bashcompinit
+compinit -y
+bashcompinit -y
 zinit cdreplay -q
 
 
@@ -36,6 +40,7 @@ zinit cdreplay -q
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Keybindings
+bindkey '^L' clear 
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -58,6 +63,7 @@ setopt hist_find_no_dups
 # Fixes color and theme issues in tmux
 export TERM=screen-256color-bce
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/.config/.lil-dotties/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="/Users/nle/.lando/bin${PATH+:$PATH}"; #landopath
@@ -71,11 +77,13 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Bring in bash aliases
 # Aliases
-alias ls='ls --color'
-alias vim='nvim'
-alias c='clear'
-source ~/.bash_aliases
+source "$HOME/.config/.lil-dotties/zsh/aliases.zsh"
+
+# GIT Aliases
+git config --global alias.conflicts "diff --name-only --diff-filter=U"
 
 # Shell integrations
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh)"
+eval "$(jenv init -)"
+

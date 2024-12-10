@@ -144,6 +144,32 @@ EOF
 			brew install wget
 			brew install neovim
       git clone -b v2.0 https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+
+      # Install Java environment
+      brew tap AdoptOpenJDK/AdoptOpenJDK
+      brew tap homebrew/cask-versions
+      brew install --cask temurin@11
+      brew install --cask temurin@17
+      brew install --cask temurin@21
+
+      brew install jenv
+      jenv add /Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home
+      jenv add /Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home
+      jenv add /Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home
+      brew install maven
+      brew install apache-flink
+      brew install redis
+      # To start, run `cassandra -f&` or `brew services start cassandra`
+      brew install cassandra
+      # END Java env installation 
+      
+
+      # PHP ENV Install
+      /bin/bash -c "$(curl -fsSL https://get.lando.dev/setup-lando.sh)"
+
+      # Mac Only packages/apps
+      brew install --cask raycast
+
 			;;
 		Linux)
 			VERSION='v4.44.2'
@@ -160,6 +186,13 @@ EOF
 			sudo apt install zoxide
 			sudo apt install neovim
       git clone -b v2.0 https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+
+      # PHP ENV
+      /bin/bash -c "$(curl -fsSL https://get.lando.dev/setup-lando.sh)"
+      # Window Lando Command: iex (irm 'https://get.lando.dev/setup-lando.ps1' -UseB)
+
+      # Todo: Add port of Java installation steps from mac workflow.
+      #       Maybe use sdkman: https://sdkman.io/
 			;;
 	esac
 }
