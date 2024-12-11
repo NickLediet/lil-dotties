@@ -62,7 +62,7 @@ setopt hist_find_no_dups
 # ENVIRONMENT VARS
 # Fixes color and theme issues in tmux
 export TERM=screen-256color-bce
-export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/bin:/Users/nle/.cargo/bin:$PATH"
 export PATH="$HOME/.config/.lil-dotties/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
