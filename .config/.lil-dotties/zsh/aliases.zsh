@@ -31,6 +31,10 @@ alias tls="tmux list-sessions"
 alias tks="tmux kill-session -t"
 alias tas="tmux attach-session -t"
 
+# java aliases
+alias mshell="jshell --class-path `cat class-path.txt`:target/classes"
+
+
 # don't use unless you really want to
 # just use `config push`
 # alias cpush="config push"

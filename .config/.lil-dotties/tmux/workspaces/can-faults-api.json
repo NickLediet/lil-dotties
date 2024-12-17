@@ -1,0 +1,27 @@
+{
+  "name": "can-faults-api",
+  "root_path": "~/tu-projects/backend-iris-api-can-faults",
+  "cols": 3,
+  "panes": [
+    {
+      "title": "prompt",
+      "command": "",
+      "send_command": false
+    },
+    {
+      "title": "engineering-script",
+      "command": "",
+      "send_command": true
+    },
+    {
+      "title": "service-containers",
+      "command": "docker compose -f .localdev/docker-compose.yml up  --build --force-recreate",
+      "send_command": false
+    },
+    {
+      "title": "k8s-forward-9090",
+      "command": "kubectl port-forward service/ambassador-internal --namespace=ambassador \"9090:80\"",
+      "send_command": false
+    }
+  ] 
+}
