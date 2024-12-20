@@ -27,5 +27,3 @@ lspconfig.tsserver.setup {
     }
   }
 }
-
-lspconfig.jdtls.setup({})
