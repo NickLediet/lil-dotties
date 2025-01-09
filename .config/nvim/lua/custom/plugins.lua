@@ -54,13 +54,6 @@ local plugins = {
     },
   },
   {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require("plugins.configs.lspconfig")
-      require("custom.configs.lspconfig")
-    end
-  },
-  {
     "eatgrass/maven.nvim",
     cmd = { "Maven", "MavenExec" },
     dependencies = "nvim-lua/plenary.nvim",
