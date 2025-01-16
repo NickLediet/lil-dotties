@@ -143,7 +143,8 @@ EOF
 			brew install gitleaks
 			brew install wget
 			brew install neovim
-      git clone -b v2.0 https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+      # git clone -b v2.0 https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+      brew install --cask ghostty
 
       # Install Java environment
       brew tap AdoptOpenJDK/AdoptOpenJDK

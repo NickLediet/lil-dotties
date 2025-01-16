@@ -31,6 +31,16 @@ alias tls="tmux list-sessions"
 alias tks="tmux kill-session -t"
 alias tas="tmux attach-session -t"
 
+# java aliases
+function mshell {
+  jshell --class-path "$(cat class-path.txt)":target/classes
+}
+
+
+# Lil Dotties paths
+LIL_DOTTIES_PATH="~/.config/.lil-dotties"
+echo "$LIL_DOTTIES_PATH"
+alias lil-edit="vim $LIL_DOTTIES_PATH"
 # don't use unless you really want to
 # just use `config push`
 # alias cpush="config push"
