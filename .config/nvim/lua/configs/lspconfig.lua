@@ -2,6 +2,7 @@
 require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
+local nvlsp = require "nvchad.configs.lspconfig"
 
 local servers = {
   "html",
@@ -11,8 +12,9 @@ local servers = {
   -- Note: if you're having issues with this see `$LIL_DOTTIES_PATH/install-npm-globals.sh`
   -- See for config options: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#ts_ls
   "ts_ls",
+  -- See Config: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#graphql
+  "graphql"
 }
-local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
