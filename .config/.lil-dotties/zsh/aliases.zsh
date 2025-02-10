@@ -41,6 +41,7 @@ function mshell {
 LIL_DOTTIES_PATH="~/.config/.lil-dotties"
 echo "$LIL_DOTTIES_PATH"
 alias lil-edit="vim $LIL_DOTTIES_PATH"
+alias install-npm-globals="$LIL_DOTTIES_PATH/install-npm-globals.sh"
 # don't use unless you really want to
 # just use `config push`
 # alias cpush="config push"
