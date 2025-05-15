@@ -15,6 +15,11 @@ function dnuke {
 	docker rm $(docker ps -aq)
 }
 
+# Kubernetes alias
+alias k="kubectl"
+alias kc="k config"
+alias kgc="kc get-contexts"
+alias ksc="kc set-context"
 # git aliases
 alias gst="git status"
 alias gadd="git add"
