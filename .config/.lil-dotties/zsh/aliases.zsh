@@ -15,6 +15,11 @@ function dnuke {
 	docker rm $(docker ps -aq)
 }
 
+# Kubernetes alias
+alias k="kubectl"
+alias kc="k config"
+alias kgc="kc get-contexts"
+alias ksc="kc set-context"
 # git aliases
 alias gst="git status"
 alias gadd="git add"
@@ -41,6 +46,7 @@ function mshell {
 LIL_DOTTIES_PATH="~/.config/.lil-dotties"
 echo "$LIL_DOTTIES_PATH"
 alias lil-edit="vim $LIL_DOTTIES_PATH"
+alias install-npm-globals="$LIL_DOTTIES_PATH/install-npm-globals.sh"
 # don't use unless you really want to
 # just use `config push`
 # alias cpush="config push"
